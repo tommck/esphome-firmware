@@ -81,6 +81,11 @@ logger:
 dashboard_import:
   package_import_url: github://esphome/firmware/voice-assistant/esp32-s3-box.yaml@main
 
+i2c:
+  scl: GPIO18
+  sda: GPIO8
+  scan: true
+
 wifi:
   ap:
   on_connect:
@@ -401,11 +406,6 @@ display:
       - id: muted_page
         lambda: |-
           it.fill(Color::BLACK);
-
-i2c:
-  scl: GPIO18
-  sda: GPIO8
-  scan: true
 
 touchscreen:
   - platform: tt21100
