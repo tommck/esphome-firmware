@@ -402,6 +402,11 @@ display:
         lambda: |-
           it.fill(Color::BLACK);
 
+i2c:
+  scl: GPIO18
+  sda: GPIO8
+  scan: true
+
 touchscreen:
   - platform: tt21100
     id: my_touchscreen
@@ -410,7 +415,6 @@ touchscreen:
     threshold: 400
     swap_x_y: false
     interrupt_pin: GPIO3
-    reset_pin: GPIO48
     on_touch:
       - lambda: |-
           ESP_LOGI("cal", "x=%d, y=%d, x_raw=%d, y_raw=%0d",
